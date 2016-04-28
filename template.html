@@ -1,0 +1,37 @@
+<div class="quiz-area" ng-show="inProgress">
+	<div ng-show="!quizOver">
+		<div class="container-fluid">
+				<h2 id="instruction">Pick the definition that best matches the word:</h2>
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<h2 id="question">{{question}}</h2>
+				<div class="radio" ng-repeat="option in options">
+					<label id="radio"><input type="radio" name="answer" value="{{option}}">{{option}}</label>
+				</div>
+				<button class="btn btn-warning" ng-click="checkAnswer()" ng-show="answerMode">Submit</button>
+
+				<div ng-show="!answerMode">
+					<button class="btn btn-warning" ng-click="nextQuestion()" class="next-question">Next</button>
+				</div>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+	</div>
+
+	<div ng-show="quizOver">
+		<h2>Quiz is over</h2>
+		<h3>Score: {{score/5 * 100}}%</h3>
+		<button class="btn btn-warning" ng-click="reset()">Play Again</button>
+		<button class="btn btn-warning" ui-sref="dashboard">Dashboard</button>
+		<button class="btn btn-warning" ng-click="saveScore()">Save Score</button>
+	</div>
+
+	<div ng-show="!answerMode">
+		<span class="answerResponseCorrect animated fadeIn" ng-show="correctAns"><strong>That is correct!</strong></span>
+		<span class="answerResponseIncorrect animated fadeIn" ng-show="!correctAns"><strong>Sorry, that is an incorrect answer.</strong></span>
+	</div>
+</div>
+
+<div class="intro" ng-show="!inProgress">
+	<button class="btn btn-warning" id="startQuiz" ng-click="start()">Start the Quiz</button>
+</div>

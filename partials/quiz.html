@@ -1,0 +1,16 @@
+<header ng-show="userId">
+	<nav>
+		<ul>
+			<li><a ui-sref="dashboard"><i class="fa fa-home fa-lg"></i></a></li>
+			<li ng-show="userId"><a ui-sref="dashboard">Dashboard</a></li>
+				<li class="logout" ng-if="userId">
+					<button id="logbtn" ng-click="logOut()" class="btn btn-warning" ui-sref="home">Logout</button>
+				</li>
+		</ul>
+	</nav>
+</header>
+
+<div class="container text-center" id="quizContainer">
+	<h1 id="title">Quiz Time!</h1>
+	<quiz/>
+</div>

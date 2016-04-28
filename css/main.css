@@ -1,0 +1,148 @@
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300italic,300);
+
+body {
+    background-color: #52accc;
+    font-family: 'Raleway', 'Helvetica Neue', 'Helvetica', sans-serif;
+}
+
+nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 9999;
+  background-color: #181c22;
+  background-position: top;
+  font-family: 'Raleway', 'Helvetica Neue', 'Helvetica', sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0.5em;
+}
+
+li {
+  display: inline;
+  padding: 0.5em;
+  font-size: 16px;
+  font-variant: small-caps;
+}
+
+#logbtn {
+	position: absolute;
+	right: 10px;
+  font-size: 16px;
+  padding: 0;
+  padding-right: 6px;
+  padding-left: 6px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', 'Helvetica Neue', 'Helvetica', sans-serif;
+}
+
+
+#instruction {
+  font-style: italic;
+  font-size: 18px;
+}
+
+.container {
+  padding: 1em;
+}
+
+#bodyDiv {
+  padding-top: 5em;
+}
+
+.title {
+  color: white;
+  font-family: Pacifico, 'Raleway', 'Helvetica Neue', 'Helvetica', sans-serif;;
+  font-size: 1.5em;
+}
+
+#title {
+  color: white;
+  text-align: center;
+  font-family: Pacifico, 'Raleway', 'Helvetica Neue', 'Helvetica', sans-serif;;
+  font-size: 5em;
+  padding: .5em;
+}
+
+div#homeContainer {
+  position: absolute;
+  top: 30%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#homeSignIn {
+  padding-top: 1em;
+}
+
+div#quizContainer {
+  position: absolute;
+  top: 5%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.progress-bar {
+  color: black;
+}
+
+.answerResponseCorrect {
+  font-size: 36px;
+  color: green;
+}
+
+.answerResponseIncorrect {
+  font-size: 36px;
+  color: red;
+}
+
+#info{
+  font-size: 2em;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.aboutBtn{
+  text-align: center;
+  margin: 0px auto;
+}
+
+.radio{
+  text-align: left;
+}
+
+@media screen and (min-width: 1228px) {
+
+  #title{
+    font-size: 5.5em;
+  }
+
+  h1, title {
+    font-size: 4em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  #instruction {
+    font-size: 2em;
+  }
+
+  .radio {
+    font-size: 1.5em;
+  }
+
+}

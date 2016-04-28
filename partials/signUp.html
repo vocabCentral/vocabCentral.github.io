@@ -1,0 +1,68 @@
+<div class="animated fadeIn">
+  <div class="container">
+    <h1 class="text-center">Sign Up With <span class="title">Vocab Central!</span></h1>
+  </div>
+
+  <div class="container">
+    <form name="userForm" role="form" class="form-horizontal" novalidate>
+
+      <!-- First Name -->
+      <div class="form-group" ng-class="{ 'has-error' : userForm.firstname.$invalid && userForm.firstname.$touched }">
+        <label class="control-label col-sm-2" for="firstname">First Name*:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="firstname" id="firstname" ng-model="newUser.firstname" placeholder="Enter First Name..." required>
+          <span ng-show="userForm.firstname.$invalid && userForm.firstname.$touched" class="help-block" id="firstnameValidate">Your first name is required.</span>
+        </div>
+      </div>
+
+      <!-- Last Name -->
+      <div class="form-group" ng-class="{ 'has-error' : userForm.lastname.$invalid && userForm.lastname.$touched }">
+        <label class="control-label col-sm-2" for="lastname">Last Name*:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="lastname" id="lastname" ng-model="newUser.lastname" placeholder="Enter Last Name..."  required>
+          <span ng-show="userForm.lastname.$invalid && userForm.lastname.$touched" class="help-block" id="lastnameValidate">Your last name is required.</span>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group" ng-class="{ 'has-error' : userForm.email.$touched && userForm.email.$invalid }">
+        <label class="control-label col-sm-2" for="email">Email*:</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email..." ng-model="newUser.email" required>
+          <span ng-show="userForm.email.$touched && userForm.email.$error.required" class="help-block" id="emailBlankValidate">Enter your email.</span>
+          <span ng-show="userForm.email.$touched && userForm.email.$error.email" class="help-block" id="emailErrorValidate">Please enter a valid email.</span>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group" ng-class="{ 'has-error' : userForm.pw1.$invalid && userForm.pw1.$touched }">
+        <label class="control-label col-sm-2" for="pwd">Password*:</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" name="pw1" id="pw1" placeholder="Enter Password..." ng-model="newUser.password" required>
+          <span ng-show="userForm.pw1.$invalid && userForm.pw1.$touched" class="help-block" id="passwordValidate">Password required!</span>
+        </div>
+      </div>
+
+      <!-- Password Confirm -->
+      <div class="form-group" ng-class="{ 'has-error' : userForm.pw2.$error.nxEqualEx }">
+        <label class="control-label col-sm-2" for="confirmpwd">Confirm Password*:</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" name="pw2" id="pw2" placeholder="Confirm Password..." ng-model="newUser.confirmPassword" nx-equal-ex="newUser.password" required>
+          <span ng-show="userForm.pw2.$error.nxEqualEx" class="help-block" id="passwordConfirmValidate">Passwords must be equal!</span>
+        </div>
+      </div>
+
+      <div class="help-block col-sm-offset-2" ng-show="userForm.$invalid">
+        <span>* required</span>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="reset" class="btn btn-default">Reset</button>
+          <a ui-sref="dashboard"><button ng-disabled="userForm.$invalid" type="submit" class="btn btn-primary" ng-click="signUp()" id="formSubmit">Submit</button></a>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

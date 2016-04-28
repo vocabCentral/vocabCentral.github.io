@@ -1,0 +1,70 @@
+<header ng-show="userId">
+	<nav>
+		<ul>
+			<li><a ui-sref="dashboard"><i class="fa fa-home fa-lg"></i></a></li>
+			<li ng-show="userId"><a ui-sref="dashboard">Dashboard</a></li>
+				<li class="logout" ng-if="userId">
+					<button id="logbtn" ng-click="logOut()" class="btn btn-warning" ui-sref="home">Logout</button>
+				</li>
+		</ul>
+	</nav>
+</header>
+
+<h1 id="title">Vocab Central</h1>
+
+<div class="animated fadeIn">
+	<div class="container dashboardLevel" id="dashboardLevel1"> <!-- Level 1 -->
+		<h2>Level 1 - Baby Words</h2>
+		<div class="progress">
+			<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+			aria-valuemin="0" aria-valuemax="100" style="width:{{users[userId].levelOneScore/5 * 100}}%">
+			{{users[userId].levelOneScore/5 * 100}}% Correct
+			</div>
+		</div>
+		<button class="btn btn-danger span7" ui-sref="quiz" ng-click="setDifficulty(1)"><strong>Get Started!</strong></button>
+	</div> <!-- End Level 1 -->
+
+	<div class="container dashboardLevel" id="dashboardLevel2"> <!-- Level 2 -->
+		<h2>Level 2 - Getting a bit better</h2>
+		<div class="progress">
+			<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+			aria-valuemin="0" aria-valuemax="100" style="width:{{users[userId].levelTwoScore/5 * 100}}%">
+			{{users[userId].levelTwoScore/5 * 100}}% Correct
+			</div>
+		</div>
+		<button class="btn btn-danger span7" ui-sref="quiz" ng-click="setDifficulty(2)"><strong>Get Started!</strong></button>
+	</div> <!-- End Level 2 -->
+
+	<div class="container dashboardLevel" id="dashboardLevel3"> <!-- Level 3 -->
+		<h2>Level 3 - Advanced</h2>
+		<div class="progress">
+			<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+			aria-valuemin="0" aria-valuemax="100" style="width:{{users[userId].levelThreeScore/5 * 100}}%">
+			{{users[userId].levelThreeScore/5 * 100}}% Correct
+			</div>
+		</div>
+		<button class="btn btn-danger span7" ui-sref="quiz" ng-click="setDifficulty(3)"><strong>Get Started!</strong></button>
+	</div> <!-- End Level 3 -->
+
+	<div class="container dashboardLevel" id="dashboardLevel4"> <!-- Level 4 -->
+		<h2>Level 4 - Scholar Vocabularist</h2>
+		<div class="progress">
+			<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+			aria-valuemin="0" aria-valuemax="100" style="width:{{users[userId].levelFourScore/5 * 100}}%">
+			{{users[userId].levelFourScore/5 * 100}}% Correct
+			</div>
+		</div>
+		<button class="btn btn-danger span7" ui-sref="quiz" ng-click="setDifficulty(4)"><strong>Get Started!</strong></button>
+	</div> <!-- End Level 4 -->
+
+	<div class="container dashboardLevel" id="dashboardLevel5"> <!-- Level 5 -->
+		<h2>Level 5 - Big Boy Words</h2>
+		<div class="progress">
+			<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+			aria-valuemin="0" aria-valuemax="100" style="width:{{users[userId].levelFiveScore/5 * 100}}%">
+			{{users[userId].levelFiveScore/5 * 100}}% Correct
+			</div>
+		</div>
+		<button class="btn btn-danger span7" ui-sref="quiz" ng-click="setDifficulty(5)"><strong>Get Started!</strong></button>
+	</div> <!-- End Level 5 -->
+</div>
